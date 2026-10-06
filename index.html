@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Digital Isai: custom songs and lyric videos for birthdays, weddings and anniversaries, in any language. No advance payment, 1 day delivery.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Digital Isai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Catamaran:wght@300;400;500;600;700;800&family=Noto+Serif+Tamil:wght@600;700&family=Noto+Sans+Telugu:wght@600&family=Noto+Sans+Malayalam:wght@600&family=Noto+Sans+Kannada:wght@600&family=Noto+Sans+Devanagari:wght@600&family=Noto+Sans+Bengali:wght@600&family=Noto+Sans+Gujarati:wght@600&family=Noto+Sans+Gurmukhi:wght@600&display=swap">
+<style>
+/* Layout: black studio stage; brass-gold light on brushed silver, as in the logo. 3D disc hero, 3D package ring, then a calm order desk. */
+:root{
+  --ink:#07080b;          /* stage black */
+  --panel:#101219;        /* raised surface */
+  --panel-2:#171a23;
+  --line:#262a36;
+  --silver:#c9cfdb;       /* brushed steel text */
+  --mute:#8a90a0;
+  --gold:#e9ad3f;         /* brass */
+  --gold-2:#ffd27a;
+  --gold-deep:#9a6a1c;
+  --wa:#25d366;
+  --f-display:"Michroma","Eurostile","Segoe UI",sans-serif;
+  --f-body:"Catamaran","Segoe UI",system-ui,sans-serif;
+  --f-tamil:"Noto Serif Tamil","Catamaran",serif;
+  --f-script:"Catamaran","Noto Sans Telugu","Noto Sans Malayalam","Noto Sans Kannada","Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Gujarati","Noto Sans Gurmukhi",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--silver);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{text-wrap:balance;margin:0;color:#fff}
+h2{font-family:var(--f-display);font-size:clamp(1.25rem,3.4vw,2rem);letter-spacing:.06em;text-transform:uppercase;line-height:1.35}
+.eyebrow{font-family:var(--f-display);font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+.lede{color:var(--mute);max-width:60ch;margin:12px 0 0}
+section{padding-block:clamp(64px,9vw,112px)}
+.sec-head{display:grid;gap:12px;margin-bottom:40px}
+.gold{color:var(--gold)}
+.ta{font-family:var(--f-tamil)}
+
+/* ---------- header ---------- */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--ink) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:54px;height:auto}
+.brand span{font-family:var(--f-display);font-size:.8rem;letter-spacing:.22em;color:#fff;line-height:1.2}
+.brand span b{display:block;color:var(--gold);font-weight:400;font-size:.66rem;letter-spacing:.5em}
+nav.links{display:flex;gap:26px;font-size:.92rem}
+nav.links a{text-decoration:none;color:var(--mute);transition:color .2s}
+nav.links a:hover{color:var(--gold-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--f-body);font-weight:700;font-size:1rem;border:0;cursor:pointer;text-decoration:none;border-radius:999px;padding:13px 24px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-gold{background:linear-gradient(180deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));color:#1a1206;box-shadow:0 8px 30px -8px color-mix(in srgb,var(--gold) 70%,transparent)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px color-mix(in srgb,var(--gold) 80%,transparent)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-2)}
+.btn-sm{padding:9px 18px;font-size:.9rem}
+@media (max-width:820px){nav.links{display:none}}
+.hdr-r{display:flex;align-items:center;gap:10px}
+.lang-tg{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--panel)}
+.lang-tg button{border:0;background:transparent;color:var(--mute);font:600 .78rem var(--f-body);padding:6px 11px;border-radius:999px;cursor:pointer}
+.lang-tg button[aria-pressed="true"]{background:var(--gold);color:#1a1206}
+@media (max-width:440px){.brand span{display:none}.hdr-r .btn-sm{padding:8px 13px}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-block:clamp(40px,7vw,80px) clamp(56px,8vw,90px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 55% at 72% 45%,color-mix(in srgb,var(--gold) 16%,transparent),transparent 70%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:center;position:relative}
+.hero-copy{display:grid;gap:22px;min-width:0}
+.hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(1.7rem,4.6vw,3.25rem);line-height:1.22;letter-spacing:.02em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold-2),var(--gold) 60%,#c98a2a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .ta-line{font-family:var(--f-tamil);font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--gold-2)}
+.hero p.sub{color:var(--mute);max-width:46ch;margin:0;font-size:1.08rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:flex;flex-wrap:wrap;gap:28px;padding-top:8px;border-top:1px solid var(--line)}
+.stats div{display:grid}
+.stats b{font-family:var(--f-display);font-weight:400;font-size:1.25rem;color:#fff;font-variant-numeric:tabular-nums}
+.stats span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.stage{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:center;cursor:grab;touch-action:pan-y}
+.stage:active{cursor:grabbing}
+.stage canvas{width:100%!important;height:100%!important;display:block}
+.snd{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:2;display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);background:color-mix(in srgb,var(--ink) 70%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--gold-2);font:600 .85rem var(--f-body);cursor:pointer;white-space:nowrap;animation:pulse 2.4s ease-in-out infinite}
+.snd.on{animation:none;background:linear-gradient(180deg,var(--gold-2),var(--gold) 60%,var(--gold-deep));color:#1a1206;border-color:transparent}
+.snd .eq{display:flex;gap:2px;align-items:flex-end;height:14px}
+.snd .eq i{width:3px;height:4px;background:currentColor;border-radius:1px}
+.snd.on .eq i{animation:eq .8s ease-in-out infinite}
+.snd.on .eq i:nth-child(2){animation-delay:.2s}.snd.on .eq i:nth-child(3){animation-delay:.4s}.snd.on .eq i:nth-child(4){animation-delay:.1s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--gold) 45%,transparent)}50%{box-shadow:0 0 0 10px transparent}}
+.stage .hint{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);white-space:nowrap;display:flex;gap:8px;align-items:center}
+.stage .fallback{position:absolute;inset:12%;border-radius:50%;background:repeating-radial-gradient(circle,#111 0 2px,#1b1b1f 2px 4px);box-shadow:0 0 0 6px var(--gold-deep)}
+.stage.ready .fallback{display:none}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.stage{max-width:400px;order:-1}}
+
+/* ---------- marquee of occasions ---------- */
+.ticker{border-block:1px solid var(--line);overflow:hidden;padding-block:14px;background:var(--panel)}
+.ticker .track{display:flex;gap:44px;width:max-content;animation:tick 38s linear infinite;font-family:var(--f-display);font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.ticker .track span{display:flex;align-items:center;gap:44px}
+.ticker .track span::after{content:"♪";color:var(--gold)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- languages ---------- */
+.lang-zone{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center}
+@media (max-width:860px){.lang-zone{grid-template-columns:1fr}}
+.lang-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.lang-chips span{display:inline-flex;align-items:baseline;gap:8px;padding:8px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--line);font-size:.8rem;color:var(--mute)}
+.lang-chips b{font-family:var(--f-script);font-size:1.02rem;color:#fff;font-weight:600}
+.lang-scene{--lr:170px;position:relative;height:300px;perspective:900px;display:grid;place-items:center}
+.lang-ring{position:relative;z-index:1;width:0;height:0;transform-style:preserve-3d;animation:lspin 22s linear infinite}
+.lang-ring span{position:absolute;left:0;top:0;translate:-50% -50%;white-space:nowrap;font-family:var(--f-script);font-weight:600;font-size:1.5rem;color:var(--gold-2);text-shadow:0 0 18px color-mix(in srgb,var(--gold) 45%,transparent);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.lang-core{position:absolute;z-index:0;width:110px;height:110px;border-radius:50%;display:grid;place-items:center;font-size:2.6rem;color:#1a1206;background:radial-gradient(circle at 40% 35%,var(--gold-2),var(--gold) 55%,var(--gold-deep));box-shadow:0 0 60px -6px color-mix(in srgb,var(--gold) 60%,transparent)}
+@keyframes lspin{from{transform:rotateX(-12deg) rotateY(0)}to{transform:rotateX(-12deg) rotateY(360deg)}}
+@media (max-width:520px){.lang-scene{--lr:130px;height:240px}.lang-ring span{font-size:1.2rem}.lang-core{width:84px;height:84px;font-size:2rem}}
+
+/* ---------- 3D package ring ---------- */
+.ring-zone{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:center}
+@media (max-width:900px){.ring-zone{grid-template-columns:1fr}}
+.ring-scene{position:relative;height:440px;perspective:1300px;touch-action:pan-y;user-select:none}
+.ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.pkg{position:absolute;width:230px;height:330px;left:-115px;top:-165px;border-radius:20px;padding:22px 20px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(160deg,#1e222d,#0d0f15 70%);border:1px solid var(--line);backface-visibility:hidden;-webkit-backface-visibility:hidden;cursor:pointer;transition:border-color .4s,box-shadow .4s,opacity .4s}
+.pkg.on{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 30px 60px -20px color-mix(in srgb,var(--gold) 55%,transparent)}
+.pkg .no{font-family:var(--f-display);font-size:.7rem;color:var(--gold);letter-spacing:.2em}
+.pkg h3{font-family:var(--f-body);font-weight:800;font-size:1.22rem;line-height:1.2}
+.pkg .price{font-family:var(--f-display);font-size:1.7rem;color:#fff;font-variant-numeric:tabular-nums;margin-top:auto}
+.pkg .price small{font-family:var(--f-body);font-size:.8rem;color:var(--mute);display:block;letter-spacing:.06em}
+.pkg .meter{display:flex;gap:4px;align-items:flex-end;height:46px}
+.pkg .meter i{flex:1;background:linear-gradient(var(--gold-2),var(--gold-deep));border-radius:2px;opacity:.25}
+.pkg .meter i.lit{opacity:1}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--gold) 50%,transparent);color:var(--gold-2);width:max-content}
+.ring-ctrl{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:12px}
+.round{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#fff;font-size:1.1rem;cursor:pointer;display:grid;place-items:center;transition:border-color .2s}
+.round:hover{border-color:var(--gold)}
+@media (max-width:520px){.ring-scene{height:390px}.pkg{width:196px;height:296px;left:-98px;top:-148px;padding:18px 16px}.pkg h3{font-size:1.08rem}.pkg .price{font-size:1.45rem}}
+
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:18px;min-width:0}
+.detail h3{font-size:1.5rem;font-weight:800}
+.specs{display:grid;gap:0;margin:0}
+.specs div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.specs dt{color:var(--mute);font-size:.88rem}
+.specs dd{margin:0;color:#fff;font-weight:600}
+.detail .best{background:color-mix(in srgb,var(--gold) 10%,transparent);border-radius:12px;padding:12px 14px;color:var(--gold-2);font-size:.95rem}
+.detail .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.detail .big{font-family:var(--f-display);font-size:2rem;color:#fff;font-variant-numeric:tabular-nums}
+
+/* ---------- video ---------- */
+.vid-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:760px){.vid-grid{grid-template-columns:1fr}}
+.vcard{position:relative;border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--panel);display:grid;gap:12px;overflow:hidden}
+.vcard .reel{display:flex;gap:6px}
+.vcard .reel i{width:22px;height:30px;border-radius:4px;border:1px solid var(--line);background:linear-gradient(135deg,#1d2130,#0c0e14)}
+.vcard .reel i:nth-child(2n){border-color:color-mix(in srgb,var(--gold) 40%,transparent)}
+.vcard .dur{font-family:var(--f-display);font-size:1.6rem;color:#fff}
+.vcard .dur small{font-size:.7rem;color:var(--mute);letter-spacing:.2em}
+.vcard .p{font-family:var(--f-display);font-size:1.25rem;color:var(--gold)}
+.vcard p{margin:0;color:var(--mute);font-size:.95rem}
+.vnote{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.vnote span{padding:8px 14px;border-radius:999px;background:var(--panel-2);font-size:.88rem}
+
+/* ---------- combos (flip) ---------- */
+.combo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.combo-grid{grid-template-columns:1fr}}
+.flip{perspective:1200px;height:300px;cursor:pointer}
+.flip-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.flip.turned .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);background:linear-gradient(165deg,#1a1d27,#0b0c11 75%)}
+.face.back{transform:rotateY(180deg);background:linear-gradient(165deg,#241b0b,#0e0b06 80%);border-color:color-mix(in srgb,var(--gold) 45%,transparent)}
+.face .tier{font-family:var(--f-display);font-size:.68rem;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.face h3{font-size:1.5rem;font-weight:800}
+.face .price{font-family:var(--f-display);font-size:2rem;color:#fff;margin-top:auto;font-variant-numeric:tabular-nums}
+.face .tap{font-size:.78rem;color:var(--mute);letter-spacing:.12em;text-transform:uppercase}
+.face ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.face li{display:flex;gap:10px;align-items:flex-start}
+.face li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;background:var(--gold);transform:rotate(45deg)}
+.flip.featured .face.front{border-color:var(--gold)}
+
+/* ---------- movie ---------- */
+.movie{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--panel)}
+@media (max-width:820px){.movie{grid-template-columns:1fr}}
+.movie .l{padding:clamp(26px,4vw,44px);display:grid;gap:16px;align-content:start}
+.movie .r{position:relative;min-height:260px;background:
+  repeating-linear-gradient(90deg,transparent 0 26px,#000 26px 30px),
+  linear-gradient(180deg,#191510,#0a0907);display:grid;place-items:center;overflow:hidden}
+.movie .r::before,.movie .r::after{content:"";position:absolute;left:0;right:0;height:26px;background:repeating-linear-gradient(90deg,#000 0 14px,#2a2318 14px 24px)}
+.movie .r::before{top:0}.movie .r::after{bottom:0}
+.movie .clap{font-family:var(--f-display);color:var(--gold-2);font-size:clamp(1.6rem,4vw,2.4rem);text-align:center;line-height:1.3;position:relative}
+.movie .clap small{display:block;font-size:.7rem;letter-spacing:.3em;color:var(--mute)}
+.mrates{display:grid;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.mrates div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.mrates div:last-child{border-bottom:0}
+.mrates span{color:var(--silver)}
+.mrates b{font-family:var(--f-display);font-weight:400;color:var(--gold-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.warn{border-left:3px solid var(--gold);padding:10px 14px;background:var(--panel-2);border-radius:0 10px 10px 0;font-size:.95rem;color:var(--silver)}
+
+/* ---------- samples ---------- */
+.samp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.samp{border:1px solid var(--line);border-radius:18px;padding:18px;display:grid;gap:12px;background:var(--panel);transition:border-color .3s}
+.samp.playing{border-color:var(--gold)}
+.samp.flash{animation:flash 1.6s ease-out}
+@keyframes flash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--gold) 70%,transparent)}100%{box-shadow:0 0 0 18px transparent}}
+.samp .top{display:flex;align-items:center;gap:14px}
+.samp .play{flex:none;width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;background:linear-gradient(180deg,var(--gold-2),var(--gold) 60%,var(--gold-deep));color:#1a1206}
+.samp .play svg{width:20px;height:20px}
+.samp .meta{display:grid;gap:2px;min-width:0}
+.samp b{color:#fff;font-size:1.08rem;line-height:1.25}
+.samp .meta span{font-size:.84rem;color:var(--mute)}
+.samp .wave{display:flex;gap:2px;align-items:center;height:48px;cursor:pointer;position:relative}
+.samp .wave i{flex:1;background:var(--line);border-radius:2px;transition:background .15s}
+.samp .wave i.done{background:var(--gold)}
+.samp .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.8rem;color:var(--mute);font-variant-numeric:tabular-nums}
+.samp .foot .chip{font-size:.66rem}
+.vid-sample{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;align-items:center;border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);border-radius:20px;padding:16px;background:linear-gradient(160deg,#1c1709,#0c0b08 70%)}
+.vid-sample video{width:100%;aspect-ratio:16/9;border-radius:12px;background:#000;display:block}
+.vid-sample .meta{display:grid;gap:10px;padding:6px}
+@media (max-width:760px){.vid-sample{grid-template-columns:1fr}}
+
+/* ---------- reviews ---------- */
+.reels{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.reel{flex:none;width:min(62vw,230px);scroll-snap-align:start;display:grid;gap:8px}
+.reel .frame{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#000;max-width:100%}
+.reel.big{width:min(70vw,270px)}
+.reel.big .frame{border-color:var(--gold)}
+.reel video{width:100%;height:100%;object-fit:cover;display:block}
+.reel .tap{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.7));border:0;cursor:pointer;color:#fff}
+.reel .tap span{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--gold) 90%,transparent);color:#1a1206}
+.reel .tap svg{width:22px;height:22px}
+.reel.on .tap{display:none}
+.reel small{color:var(--mute);font-size:.82rem}
+.reel small b{color:var(--gold-2);font-weight:600}
+.reel-ctrl{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+@media (max-width:600px){.reel-ctrl{display:none}}
+
+/* ---------- steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+@media (max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.step{padding:22px;border-top:2px solid var(--gold);background:var(--panel);border-radius:0 0 16px 16px;display:grid;gap:6px}
+.step::before{counter-increment:s;content:"Step " counter(s);font-family:var(--f-display);font-size:.68rem;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+.step b{color:#fff;font-size:1.08rem}
+.promise{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+@media (max-width:700px){.promise{grid-template-columns:1fr}}
+.promise div{display:grid;gap:2px;padding:16px 18px;border-radius:14px;border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+.promise b{color:var(--gold-2);font-family:var(--f-display);font-weight:400;font-size:.9rem;letter-spacing:.06em}
+.promise span{color:var(--silver);font-size:.92rem}
+.step span{color:var(--mute);font-size:.94rem}
+
+/* ---------- order desk ---------- */
+.desk{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:900px){.desk{grid-template-columns:1fr}}
+form.order{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,3.5vw,32px);display:grid;gap:18px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.f2{grid-template-columns:1fr}}
+.field{display:grid;gap:7px;min-width:0}
+.field label{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;color:#fff;background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;transition:border-color .2s}
+.field textarea{min-height:92px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field .err{color:#ff8a7a;font-size:.84rem;min-height:0}
+.stepper{display:flex;align-items:center;gap:12px}
+.stepper button{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--ink);color:#fff;font-size:1.2rem;cursor:pointer}
+.stepper output{font-family:var(--f-display);min-width:28px;text-align:center;color:#fff}
+.receipt{position:sticky;top:90px;background:linear-gradient(170deg,#1c1709,#0c0b08 70%);border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);border-radius:24px;padding:26px;display:grid;gap:16px}
+.receipt .lines{display:grid;gap:8px;font-size:.95rem}
+.receipt .lines div{display:flex;justify-content:space-between;gap:12px}
+.receipt .lines span:last-child{font-variant-numeric:tabular-nums;color:#fff}
+.receipt .total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed color-mix(in srgb,var(--gold) 40%,transparent);padding-top:14px}
+.receipt .total b{font-family:var(--f-display);font-size:1.9rem;color:var(--gold-2);font-variant-numeric:tabular-nums}
+.msg{white-space:pre-wrap;background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:.88rem;color:var(--silver);max-height:220px;overflow:auto}
+.btn-wa{background:var(--wa);color:#04210f}
+.btn-wa:hover{transform:translateY(-2px)}
+.toast{font-size:.88rem;color:var(--gold-2);min-height:1.2em}
+.paynote{font-size:.86rem;color:var(--gold-2);line-height:1.7}
+.num{font-family:var(--f-display);color:#fff;letter-spacing:.06em;user-select:all}
+
+/* ---------- faq ---------- */
+.faq{display:grid;gap:10px;max-width:820px}
+details{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:4px 20px}
+summary{cursor:pointer;padding:16px 0;font-weight:700;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-family:var(--f-display)}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 16px;color:var(--mute)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding-block:56px 110px}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr;text-align:center;justify-items:center}}
+footer img{width:150px}
+footer p{margin:0;color:var(--mute)}
+.socials{display:flex;gap:12px;flex-wrap:wrap}
+
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(37,211,102,.55);text-decoration:none}
+.fab svg{width:30px;height:30px}
+
+.reveal{opacity:1}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Digital Isai home">
+      <img src="data:image/webp;base64,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" alt="">
+      <span>DIGITAL<b>ISAI</b></span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#songs">Songs</a><a href="#video">Video</a><a href="#combos">Combos</a><a href="#movie">Movie Songs</a><a href="#samples">Samples</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="hdr-r"><div class="lang-tg" role="group" aria-label="Site language"><button type="button" data-lang="ta" aria-pressed="true">Tanglish</button><button type="button" data-lang="en" aria-pressed="false">English</button></div>
+    <a class="btn btn-gold btn-sm" href="#order">Order Now</a></div>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Custom Songs · No Advance Payment</div>
+      <h1><span data-i18n="0">Ungal moment-ku,<br><em>ungal paattu.</em></span></h1>
+      <div class="ta-line">உங்கள் நினைவுகளுக்கு ஒரு இசை</div>
+      <p class="sub"><span data-i18n="1">Birthday, wedding, anniversary, love proposal. Ungal story-ah vechu original lyrics, clear studio-quality vocals, full music, plus beat-sync lyric videos. <b style="color:#fff">Ella language-laiyum.</b></span></p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#order"><span data-i18n="2">Song Order Pannunga</span></a>
+        <a class="btn btn-ghost" href="#samples"><span data-i18n="3">▶ Samples Kelunga</span></a>
+      </div>
+      <div class="stats">
+        <div><b>₹499</b><span>Starts at</span></div>
+        <div><b>All</b><span>Languages</span></div>
+        <div><b>₹0</b><span>Advance</span></div>
+        <div><b>1 Day</b><span>Delivery</span></div>
+        <div><b>QR</b><span>Gift code from ₹949</span></div>
+      </div>
+    </div>
+    <div class="stage" id="stage" aria-label="Rotating 3D vinyl. Drag to spin.">
+      <div class="fallback"></div>
+      <button class="snd" id="snd" type="button" aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sndTxt">Tap to play our song</span></button>
+      <div class="hint"><span data-i18n="4">⟲ Drag panni suthunga</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="track" id="ticker"></div></div>
+
+<section id="languages">
+  <div class="wrap lang-zone">
+    <div class="sec-head" style="margin:0">
+      <div class="eyebrow">All Languages Available</div>
+      <h2>Your song, in your language</h2>
+      <p class="lede"><span data-i18n="5">Tamil mattum illa. Telugu, Malayalam, Kannada, Hindi, English, mixed languages, enna language venumnaalum lyrics ezhudhi paadi kudupom. Every package, every combo, every language.</span></p>
+      <div class="lang-chips" id="langChips"></div>
+    </div>
+    <div class="lang-scene" aria-hidden="true"><div class="lang-ring" id="langRing"></div><div class="lang-core">♪</div></div>
+  </div>
+</section>
+
+<section id="songs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span data-i18n="6">Audio Packages · Song Mattum</span></div>
+      <h2>Pick your sound</h2>
+      <p class="lede"><span data-i18n="7">Swipe panni ring-ah suthunga. Card-ah tap pannina antha package-oda sample song play aagum. Each step up adds length, lines and richer arrangement.</span></p>
+    </div>
+    <div class="ring-zone">
+      <div class="ring-scene" id="ringScene">
+        <div class="ring" id="ring"></div>
+        <div class="ring-ctrl">
+          <button class="round" id="prev" aria-label="Previous package">←</button>
+          <button class="round" id="next" aria-label="Next package">→</button>
+        </div>
+      </div>
+      <article class="detail" id="detail" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<section id="video" style="background:var(--panel);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Aesthetic Video</div>
+      <h2>Lyrics that move with the beat</h2>
+      <p class="lede">High-quality visuals, seamless transitions and beat-sync typography. Reels, status, or the big-screen moment at the function.</p>
+    </div>
+    <div class="vid-grid">
+      <div class="vcard"><div class="reel"><i></i><i></i><i></i></div><div class="dur">30 <small>SEC</small></div><div class="p">₹899</div><p><span data-i18n="8">Reels / teaser cut. Instagram & WhatsApp status-ku perfect.</span></p></div>
+      <div class="vcard"><div class="reel"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="dur">60 <small>SEC</small></div><div class="p">₹1,798</div><p><span data-i18n="9">1 min full cut. Story full-ah solla neraiya space.</span></p></div>
+      <div class="vcard"><div class="reel"><i></i><i></i><i></i></div><div class="dur">+30 <small>SEC</small></div><div class="p">₹899</div><p><span data-i18n="10">Extra length add pannalam, every additional 30 seconds.</span></p></div>
+    </div>
+    <div class="vnote"><span>🎬 Beat-sync typography</span><span>✨ Smooth transitions</span><span>📱 Vertical 9:16 ready</span></div>
+  </div>
+</section>
+
+<section id="combos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Best Value Combos · Song + 30s Video</div>
+      <h2>One order, song and video ready</h2>
+      <p class="lede"><span data-i18n="11">Card-ah tap pannunga, what's inside paakalam.</span></p>
+    </div>
+    <div class="combo-grid" id="combos-grid"></div>
+  </div>
+</section>
+
+<section id="movie" style="padding-top:0">
+  <div class="wrap">
+    <div class="movie">
+      <div class="l">
+        <div class="eyebrow">Movie Customized Songs</div>
+        <h2>Your names in a film song</h2>
+        <p class="lede" style="margin:0"><span data-i18n="12">Original movie song structure-la, full song lines-ah ungal story-ku rewrite panni paadi kudupom.</span></p>
+        <div class="mrates">
+          <div><span>Movie song only</span><b>₹1,999</b></div>
+          <div><span>Movie song + 30 sec video</span><b>₹2,898</b></div>
+          <div><span>Movie song + 60 sec video</span><b>₹3,797</b></div>
+        </div>
+        <p style="margin:0;color:var(--mute);font-size:.92rem"><span data-i18n="13">+ extra arrangement / instrumentation price separate. Video edit-la movie-style beat-sync lyrics & transitions.</span></p>
+        <p class="warn"><span data-i18n="14">Ippo namma Drive list-la irukkira movie songs mattum available. Vera songs-ku copyright issue irukku, future-la add panniduvom. List-ku WhatsApp pannunga.</span></p>
+        <div class="cta-row"><a class="btn btn-gold" href="#order" data-pick="movie">Movie Song Order</a><a class="btn btn-ghost" href="#samples"><span data-i18n="15">▶ Sample kelunga</span></a></div>
+      </div>
+      <div class="r"><div class="clap"><small>TAKE 01 · SCENE: YOU</small><span data-i18n="16">Hero<br>neenga thaan</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="samples" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Listen & Watch</div>
+      <h2>Our recent work</h2>
+      <p class="lede"><span data-i18n="17">Namma recent customer songs and lyric video. Headphones-la kelunga. Customer privacy-kaga titles maathirukkom.</span></p>
+    </div>
+    <div class="samp-grid" id="samp"></div>
+    <div class="cta-row" style="margin-top:22px"><a class="btn btn-ghost" href="https://www.instagram.com/digital.isai" target="_blank" rel="noopener"><span data-i18n="18">Instagram-la paarunga @digital.isai</span></a></div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Happy Clients</div>
+      <h2>What our customers said</h2>
+      <p class="lede"><span data-i18n="19">Song kettutu customers anuppina real WhatsApp messages, and oru surprise moment. Tap panni paarunga.</span></p>
+    </div>
+    <div class="reels" id="reels"></div>
+    <div class="reel-ctrl"><button class="round" id="rPrev" aria-label="Scroll reviews left">←</button><button class="round" id="rNext" aria-label="Scroll reviews right">→</button></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How It Works</div>
+      <h2>From your story to your song</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><b>Order on WhatsApp</b><span><span data-i18n="20">Package, occasion, language, ungal story share pannunga.</span></span></div>
+      <div class="step"><b>We compose</b><span><span data-i18n="21">Lyrics ezhudhi, music compose panni, vocals ready pannuvom.</span></span></div>
+      <div class="step"><b>Preview first</b><span><span data-i18n="22">Song-oda oru portion cut panni anuppuvom. Kettu paathu pidichadhaa-nu sollunga.</span></span></div>
+      <div class="step"><b>Pay & get full song</b><span><span data-i18n="23">Payment pannina udane full song (video, QR serthu) anuppuvom. Ellam 1 day-kulla.</span></span></div>
+    </div>
+    <div class="promise">
+      <div><b>1 day delivery</b><span><span data-i18n="24">Order confirm aana 1 naal-kulla</span></span></div>
+      <div><b>No advance payment</b><span><span data-i18n="25">Preview kettu pidichaa mattum pay pannunga</span></span></div>
+      <div><b>1 free change</b><span><span data-i18n="26">Compose aana piragu oru thadava maathalaam</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="order" style="background:var(--panel);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Order Desk</div>
+      <h2>Build your order</h2>
+      <p class="lede"><span data-i18n="27">Fill pannunga, total auto-ah calculate aagum. Then one tap-la WhatsApp-ku anuppunga.</span></p>
+    </div>
+    <div class="desk">
+      <form class="order" id="orderForm" novalidate>
+        <div class="f2">
+          <div class="field"><label for="fName"><span data-i18n="28">Ungal peyar</span></label><input id="fName" autocomplete="name" placeholder="eg. Karthik" value=""><span class="err" id="eName"></span></div>
+          <div class="field"><label for="fOcc">Occasion</label>
+            <select id="fOcc"><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Love Proposal</option><option>Engagement</option><option>Baby Shower / Valaikaappu</option><option>Parents Tribute</option><option>Friendship</option><option>Other</option></select></div>
+        </div>
+        <div class="field"><label for="fPkg">Package</label><select id="fPkg"></select></div>
+        <div class="f2">
+          <div class="field"><label for="fLang">Song language</label><select id="fLang"></select></div>
+          <div class="field" id="otherWrap" hidden><label for="fLangOther"><span data-i18n="29">Endha language?</span></label><input id="fLangOther" placeholder="eg. Marathi, Sourashtra, Arabic"></div>
+        </div>
+        <div class="f2">
+          <div class="field"><label for="fFor"><span data-i18n="30">Yaarukaga? (names in song)</span></label><input id="fFor" placeholder="eg. Priya, Amma"></div>
+          <div class="field"><label for="fDate"><span data-i18n="31">Venum date</span></label><input id="fDate" type="date"></div>
+        </div>
+        <div class="field"><label>Extra video (+30 sec, ₹899 each)</label>
+          <div class="stepper"><button type="button" id="minus" aria-label="Remove 30 seconds">−</button><output id="xv">0</output><button type="button" id="plus" aria-label="Add 30 seconds">+</button></div></div>
+        <div class="field"><label for="fNote">Story / mood (optional)</label><textarea id="fNote" placeholder="eg. College-la meet pannom, 5 years together, romantic + fun vibe"></textarea></div>
+      </form>
+      <aside class="receipt" aria-label="Order summary">
+        <div class="eyebrow">Summary</div>
+        <div class="lines" id="lines"></div>
+        <div class="total"><span>Total</span><b id="total">₹0</b></div>
+        <div class="msg" id="msg"></div>
+        <a class="btn btn-wa" id="waBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8 1 3.9.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+          <span data-i18n="32">WhatsApp-la Order Anuppu</span></a>
+        <button class="btn btn-ghost btn-sm" id="copyBtn" type="button"><span data-i18n="33">Message copy pannu</span></button>
+        <div class="toast" id="toast"></div>
+        <div class="paynote">✓ No advance payment &nbsp;·&nbsp; <span data-i18n="34">✓ Preview kettutu thaan pay</span> &nbsp;·&nbsp; ✓ 1 day delivery &nbsp;·&nbsp; ✓ 1 free change</div>
+        <div style="font-size:.88rem;color:var(--mute)"><span data-i18n="35">WhatsApp open aagalana, intha number-ku message paste pannunga:</span> <span class="num">+91 93612 09126</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">FAQ</div><h2>Common questions</h2></div>
+    <div class="faq">
+      <details><summary><span data-i18n="36">QR Code-na enna?</span></summary><p><span data-i18n="37">₹949 and above packages-ku oru QR code tharuvom. Greeting card, gift box, cake topper mela print panna, scan pannina udane song play aagum.</span></p></details>
+      <details><summary><span data-i18n="38">Endha language-la song pannuveenga?</span></summary><p><span data-i18n="39">All languages available. Tamil, Telugu, Malayalam, Kannada, Hindi, English, Bengali, Marathi, Gujarati, Punjabi, and mixed (eg. Tamil + English, Tamil + Telugu). List-la illatha language venumnaalum order form-la "Other" select panni sollunga. Same package price thaan.</span></p></details>
+      <details><summary><span data-i18n="40">Ennenna details anuppanum?</span></summary><p><span data-i18n="41">Names, occasion, ungal memories, special words or nicknames, and song mood (romantic, fun, emotional, devotional). Neraiya details kudutha, song innum personal-ah varum.</span></p></details>
+      <details><summary><span data-i18n="42">Movie song yen ellam available illa?</span></summary><p><span data-i18n="43">Copyright reasons-naala namma Drive list-la irukkira songs mattum ippo pannrom. Puthu songs future-la add aagum.</span></p></details>
+      <details><summary><span data-i18n="44">Evlo naal-la song kidaikum?</span></summary><p><span data-i18n="45">Order confirm aana 1 day-kulla. Lyrics, compose, preview ellam athukulla mudichuduvom.</span></p></details>
+      <details><summary><span data-i18n="46">Advance payment kattanuma?</span></summary><p><span data-i18n="47">Illa, no advance payment. Song compose aanathum oru portion cut panni preview anuppuvom. Kettu pidichirundha payment pannunga, udane full song anuppuvom. Payment details WhatsApp-la share pannuvom.</span></p></details>
+      <details><summary><span data-i18n="48">Song-la change panna mudiyuma?</span></summary><p><span data-i18n="49">Mudiyum. Compose aana piragu oru thadava free-ah change pannalaam (lyrics word, name, line). Preview kettu enna maathanum-nu sollunga.</span></p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="data:image/webp;base64,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" alt="Digital Isai logo">
+    <p>Custom Tamil songs and lyric videos for every special moment.<br>WhatsApp: <span class="num">+91 93612 09126</span></p>
+    <div class="socials">
+      <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/digital.isai" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn-gold btn-sm" href="https://wa.me/919361209126" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/919361209126" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8 1 3.9.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const WA = "919361209126";
+/* ---------- site language (Tanglish / English) ---------- */
+const I18N_EN={"0": "A song for<br><em>your moment.</em>", "1": "Birthday, wedding, anniversary, love proposal. Original lyrics written from your story, clear studio-quality vocals, full music, plus beat-sync lyric videos. <b style=\"color:#fff\">In any language.</b>", "2": "Order a Song", "3": "▶ Listen to Samples", "4": "⟲ Drag to spin", "5": "Not just Tamil. Telugu, Malayalam, Kannada, Hindi, English or a mix, we write and sing in whatever language you want. Every package, every combo, every language.", "6": "Audio Packages · Song Only", "7": "Swipe to spin the ring. Tap a card to hear that package’s sample song. Each step up adds length and a richer arrangement.", "8": "Reels / teaser cut. Perfect for Instagram and WhatsApp status.", "9": "1 min full cut. Room to tell the whole story.", "10": "Add more length, priced per extra 30 seconds.", "11": "Tap a card to see what’s inside.", "12": "We keep the film song’s original structure, rewrite every line around your story, and sing it for you.", "13": "Extra arrangement / instrumentation is priced separately. Video edits get movie-style beat-sync lyrics and transitions.", "14": "Right now only the movie songs on our Drive list are available. Other songs have copyright issues; we will add more later. WhatsApp us for the list.", "15": "▶ Listen to sample", "16": "Starring<br>you", "17": "Recent customer songs and a lyric video. Best with headphones. Titles changed for customer privacy.", "18": "See more on Instagram @digital.isai", "19": "Real WhatsApp messages customers sent after hearing their song, and one surprise moment. Tap to watch.", "20": "Share the package, occasion, language and your story.", "21": "We write the lyrics, compose the music and record the vocals.", "22": "We send you a short preview clip. Listen and tell us if you like it.", "23": "Once you pay, we send the full song (with video and QR). All within 1 day.", "24": "Within 1 day of confirming your order", "25": "Pay only after you hear and like the preview", "26": "One change allowed after the song is composed", "27": "Fill in the details and the total updates automatically. Then send it on WhatsApp in one tap.", "28": "Your name", "29": "Which language?", "30": "Who is it for? (names in song)", "31": "Needed by", "32": "Send Order on WhatsApp", "33": "Copy message", "34": "✓ Pay after preview", "35": "If WhatsApp does not open, paste the message to this number:", "36": "What is the QR code?", "37": "Packages from ₹949 come with a QR code. Print it on a greeting card, gift box or cake topper; scanning it plays the song instantly.", "38": "Which languages do you make songs in?", "39": "All languages. Tamil, Telugu, Malayalam, Kannada, Hindi, English, Bengali, Marathi, Gujarati, Punjabi, and mixes (eg. Tamil + English, Tamil + Telugu). If yours is not listed, choose \"Other\" in the order form. Same package price.", "40": "What details should I send?", "41": "Names, occasion, your memories, special words or nicknames, and the mood (romantic, fun, emotional, devotional). The more you share, the more personal the song.", "42": "Why aren’t all movie songs available?", "43": "Because of copyright, we only do the songs on our Drive list for now. More songs will be added later.", "44": "How long does it take?", "45": "Within 1 day of confirming your order. Lyrics, composing and the preview are all done in that time.", "46": "Do I pay an advance?", "47": "No advance payment. Once the song is composed, we send a short preview clip. If you like it, pay and we send the full song right away. Payment details are shared on WhatsApp.", "48": "Can I ask for changes?", "49": "Yes. One free change after composing (a lyric word, a name, a line). Hear the preview and tell us what to change."};
+let LANG="ta"; try{ if(localStorage.getItem("di-lang")==="en") LANG="en"; }catch(e){}
+const T=(ta,en)=>LANG==="en"?en:ta;
+const I18N_TA={}; document.querySelectorAll("[data-i18n]").forEach(el=>{ I18N_TA[el.dataset.i18n]=el.innerHTML; });
+const PH={fFor:["eg. Priya, Amma","eg. Priya, Mom"],fNote:["eg. College-la meet pannom, 5 years together, romantic + fun vibe","eg. Met in college, 5 years together, romantic + fun vibe"]};
+const reRenders=[];
+function applyLang(){
+  document.documentElement.lang=LANG==="en"?"en":"ta";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{ el.innerHTML=LANG==="en"?I18N_EN[el.dataset.i18n]:I18N_TA[el.dataset.i18n]; });
+  Object.entries(PH).forEach(([id,v])=>{ const el=document.getElementById(id); if(el) el.placeholder=v[LANG==="en"?1:0]; });
+  document.querySelectorAll(".lang-tg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===LANG));
+  reRenders.forEach(f=>f());
+}
+document.querySelectorAll(".lang-tg button").forEach(b=>b.addEventListener("click",()=>{ LANG=b.dataset.lang; try{localStorage.setItem("di-lang",LANG)}catch(e){} applyLang(); }));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const inr = n => "₹" + n.toLocaleString("en-IN");
+
+/* ---------- data ---------- */
+const PKGS = [
+  {id:"p1",name:"Acoustic & Solo Vocal",price:499,dur:"Around 2 mins",music:"Single instrument + clean vocals",lines:"Intro, verse, chorus, outro",best:"Quick wishes & WhatsApp status-ku best",bestEn:"Best for quick wishes and WhatsApp status",qr:false,lvl:1},
+  {id:"p2",name:"Rhythmic & Folk Touch",price:749,dur:"2:30 to 3 mins",music:"Light beats + melodic vocals",lines:"2 verses, chorus, bridge",best:"Reels & lively greetings-ku perfect",bestEn:"Perfect for reels and lively greetings",qr:false,lvl:2},
+  {id:"p3",name:"Soulful Saranam",price:949,dur:"3 to 4 mins",music:"Full arrangement + structured vocals",lines:"2 verses, pre-chorus, chorus, bridge, interlude",best:"Emotional lyrics, rich instrument flow",qr:true,lvl:3},
+  {id:"p4",name:"Carnatic & Classical Fusion",price:1199,dur:"4 to 5 mins",music:"Carnatic raga touches + rich orchestration",lines:"3 verses, bridge, final chorus, interlude",best:"Traditional-meets-modern, high-end vocals",qr:true,lvl:4},
+  {id:"p5",name:"Grand Orchestral Masterpiece",price:1449,dur:"5+ mins",music:"Heavy instrumentation, multi-layered vocals",lines:"Full story in chapters, grand chorus, outro",best:"Rich harmonies, top-tier grand production",qr:true,lvl:5},
+];
+const COMBOS = [
+  {id:"c1",tier:"Starter Combo",price:1398,items:["Acoustic & Solo Vocal song (around 2 mins)","30 sec aesthetic lyric video","Status & reels ready"]},
+  {id:"c2",tier:"Classic Combo",price:1648,items:["Rhythmic & Folk Touch song (2:30 to 3 mins)","30 sec aesthetic lyric video","Lively beats for reels"]},
+  {id:"c3",tier:"Standard Combo",price:1848,items:["Soulful Saranam song (3 to 4 mins)","QR code gift","30 sec aesthetic lyric video"],featured:true},
+];
+const VIDS = [{id:"v30",name:"Aesthetic Video · 30 sec",price:899},{id:"v60",name:"Aesthetic Video · 60 sec",price:1798}];
+const MOVIES = [
+  {id:"movie",name:"Movie Customized Song",price:1999},
+  {id:"movie30",name:"Movie Song + 30 sec Video",price:2898},
+  {id:"movie60",name:"Movie Song + 60 sec Video",price:3797},
+];
+
+/* ---------- ticker ---------- */
+const occ = ["Birthday","Wedding","Anniversary","Love Proposal","Valaikaappu","Engagement","Amma Appa Tribute","Friendship Day","Retirement","Baby Name Reveal"];
+document.getElementById("ticker").innerHTML = [...occ,...occ].map(o=>`<span>${o}</span>`).join("");
+
+/* ---------- 3D package ring ---------- */
+/* ---------- languages ---------- */
+const LANGS=[["Tamil","தமிழ்"],["Telugu","తెలుగు"],["Malayalam","മലയാളം"],["Kannada","ಕನ್ನಡ"],["Hindi","हिन्दी"],["English","English"],["Bengali","বাংলা"],["Marathi","मराठी"],["Gujarati","ગુજરાતી"],["Punjabi","ਪੰਜਾਬੀ"],["Tamil + English","Tanglish"],["Tamil + Telugu","Mix"]];
+document.getElementById("langChips").innerHTML=LANGS.map(([e,n])=>`<span><b>${n}</b>${n===e?"":e}</span>`).join("")+`<span><b>+ Any</b>language</span>`;
+(()=>{const r=document.getElementById("langRing"),list=LANGS.slice(0,10),st=360/list.length;
+ r.innerHTML=list.map(([e,n],i)=>`<span style="transform:rotateY(${i*st}deg) translateZ(var(--lr))">${n}</span>`).join("");})();
+document.getElementById("fLang").innerHTML=LANGS.map(([e,n])=>`<option value="${e}">${e}${n!==e&&n!=="Mix"&&n!=="Tanglish"?" · "+n:""}</option>`).join("")+`<option value="Other">Other</option>`;
+reRenders.push(()=>{ const o=document.querySelector('#fLang option[value="Other"]'); if(o) o.textContent=T("Other (type pannunga)","Other (type it in)"); });
+function langVal(){const v=document.getElementById("fLang").value;if(v!=="Other")return v;return document.getElementById("fLangOther").value.trim()||"Other";}
+document.getElementById("fLang").addEventListener("input",()=>{document.getElementById("otherWrap").hidden=document.getElementById("fLang").value!=="Other";});
+
+/* tap a package card -> jump to its sample and play it */
+function goSample(i){
+  const card=document.querySelector(`.samp[data-i="${i}"]`); if(!card) return;
+  card.scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});
+  card.classList.remove("flash"); void card.offsetWidth; card.classList.add("flash");
+  const b=card.querySelector(".play"); if(!card.classList.contains("playing")) b.click();
+}
+const ring = document.getElementById("ring"), detail = document.getElementById("detail");
+let active = 0, step = 360/PKGS.length;
+function radius(){ return innerWidth < 520 ? 210 : 290; }
+function buildRing(){
+  ring.innerHTML = PKGS.map((p,i)=>`
+    <div class="pkg" data-i="${i}" role="button" tabindex="0" aria-label="${p.name}, ${inr(p.price)}">
+      <span class="no">0${i+1} / 05</span>
+      <h3>${p.name}</h3>
+      ${p.qr?'<span class="chip">+ QR Code</span>':'<span class="chip" style="border-color:var(--line);color:var(--mute)">Audio</span>'}
+      <div class="meter" aria-hidden="true">${[1,2,3,4,5].map(n=>`<i class="${n<=p.lvl?'lit':''}" style="height:${18+n*6}px"></i>`).join("")}</div>
+      <div class="price"><small>${p.dur}</small>${inr(p.price)}</div>
+    </div>`).join("");
+  place();
+  ring.querySelectorAll(".pkg").forEach(el=>{
+    const go=()=>{ if(window.__swiped) return; const i=+el.dataset.i; stopAuto(); spinTo(i); goSample(i); };
+    el.addEventListener("click",go);
+    el.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();go();} });
+  });
+}
+function place(){
+  const r = radius();
+  ring.querySelectorAll(".pkg").forEach((el,i)=>{ el.style.transform=`rotateY(${i*step}deg) translateZ(${r}px)`; });
+  ring.style.transform = `translateZ(${-r}px) rotateY(${-active*step}deg)`;
+}
+let turn = 0;
+function spinTo(i){
+  const n = PKGS.length;
+  let d = ((i - active) % n + n) % n; if(d > n/2) d -= n;
+  turn += d; active = ((i % n) + n) % n;
+  ring.style.transform = `translateZ(${-radius()}px) rotateY(${-turn*step}deg)`;
+  ring.querySelectorAll(".pkg").forEach((el,k)=>el.classList.toggle("on",k===active));
+  renderDetail();
+}
+function renderDetail(){
+  const p = PKGS[active];
+  detail.innerHTML = `
+    <div class="eyebrow">Package 0${active+1}</div>
+    <h3>${p.name}</h3>
+    <dl class="specs">
+      <div><dt>Duration</dt><dd>${p.dur}</dd></div>
+      <div><dt>Music</dt><dd>${p.music}</dd></div>
+      <div><dt>Song structure</dt><dd>${p.lines}</dd></div>
+      <div><dt>QR Code</dt><dd>${p.qr?"Included":"Not included"}</dd></div>
+    </dl>
+    <div class="best">💡 ${T(p.best,p.bestEn||p.best)}</div>
+    <div class="row"><span class="big">${inr(p.price)}</span><div class="cta-row"><button class="btn btn-ghost btn-sm" type="button" id="hearIt">▶ Sample</button><button class="btn btn-gold btn-sm" type="button" id="takeIt">${T("Itha select pannu","Choose this")}</button></div></div>`;
+  document.getElementById("hearIt").onclick = ()=>goSample(active);
+  document.getElementById("takeIt").onclick = ()=>pickAndScroll(p.id);
+}
+document.getElementById("prev").onclick=()=>{stopAuto();spinTo(active-1)};
+document.getElementById("next").onclick=()=>{stopAuto();spinTo(active+1)};
+// swipe
+(()=>{ const s=document.getElementById("ringScene"); let x0=null;
+  s.addEventListener("pointerdown",e=>{x0=e.clientX});
+  s.addEventListener("pointerup",e=>{ if(x0===null)return; const dx=e.clientX-x0; x0=null; window.__swiped=Math.abs(dx)>40; if(window.__swiped){stopAuto();spinTo(active+(dx<0?1:-1));} setTimeout(()=>{window.__swiped=false},60); });
+})();
+let auto = reduce?null:setInterval(()=>spinTo(active+1),4200);
+function stopAuto(){ if(auto){clearInterval(auto);auto=null;} }
+document.getElementById("ringScene").addEventListener("pointerenter",stopAuto);
+buildRing(); spinTo(0);
+addEventListener("resize",()=>{ ring.querySelectorAll(".pkg").forEach((el,i)=>{ el.style.transform=`rotateY(${i*step}deg) translateZ(${radius()}px)`; }); ring.style.transform=`translateZ(${-radius()}px) rotateY(${-turn*step}deg)`; });
+
+/* ---------- combos ---------- */
+document.getElementById("combos-grid").innerHTML = COMBOS.map(c=>`
+  <div class="flip ${c.featured?'featured':''}" tabindex="0" role="button" aria-label="${c.tier}, ${inr(c.price)}. Tap for details">
+    <div class="flip-in">
+      <div class="face front">
+        <span class="tier">${c.featured?"Most chosen · ":""}Song + Video</span>
+        <h3>${c.tier}</h3>
+        <p style="margin:0;color:var(--mute)">${c.items[0]}</p>
+        <div class="price">${inr(c.price)}</div>
+        <span class="tap">⟲ Tap to flip</span>
+      </div>
+      <div class="face back">
+        <span class="tier">${c.tier} includes</span>
+        <ul>${c.items.map(x=>`<li>${x}</li>`).join("")}</ul>
+        <button class="btn btn-gold btn-sm" style="margin-top:auto" data-combo="${c.id}" type="button">Select ${inr(c.price)}</button>
+      </div>
+    </div>
+  </div>`).join("");
+document.querySelectorAll(".flip").forEach(f=>{
+  const t=()=>f.classList.toggle("turned");
+  f.addEventListener("click",e=>{ if(e.target.closest("[data-combo]"))return; t(); });
+  f.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();t();} });
+});
+document.querySelectorAll("[data-combo]").forEach(b=>b.onclick=()=>pickAndScroll(b.dataset.combo));
+document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>pick(a.dataset.pick)));
+
+/* ---------- samples ---------- */
+const PEAKS={"1": [0.56, 0.49, 0.57, 0.57, 0.55, 0.52, 0.55, 0.59, 0.55, 0.74, 0.84, 0.85, 0.63, 0.81, 0.75, 0.76, 0.76, 0.8, 0.79, 0.78, 0.8, 0.83, 0.81, 0.79, 0.73, 0.94, 0.78, 0.83, 0.78, 0.79, 0.71, 0.82, 0.73, 0.57, 0.79, 0.84, 0.89, 0.92, 0.83, 0.86, 0.85, 0.88, 0.89, 0.87, 0.89, 0.82, 0.84, 0.95, 0.87, 0.84, 0.92, 0.92, 0.92, 1.0, 0.92, 0.9], "2": [0.58, 0.4, 0.39, 0.74, 0.78, 0.86, 0.81, 0.86, 0.84, 0.88, 0.87, 0.45, 0.89, 0.87, 0.74, 0.89, 0.85, 0.8, 0.81, 0.9, 0.85, 0.88, 0.82, 0.86, 0.83, 0.81, 0.86, 0.83, 0.93, 0.81, 0.82, 0.71, 0.87, 0.86, 0.86, 0.86, 0.88, 0.84, 0.94, 0.74, 0.85, 0.85, 0.84, 0.9, 0.86, 1.0, 0.8, 0.87, 0.89, 0.89, 0.81, 0.88, 0.84, 0.98, 0.88, 0.91], "3": [0.35, 0.33, 0.53, 0.43, 0.57, 0.54, 0.59, 0.36, 0.86, 0.88, 0.93, 0.87, 0.84, 0.88, 0.89, 0.89, 0.84, 0.78, 0.75, 0.85, 0.85, 0.82, 0.83, 0.9, 0.87, 0.83, 0.84, 0.87, 0.8, 0.93, 0.85, 0.83, 0.86, 0.95, 0.95, 0.85, 0.92, 1.0, 0.87, 0.91, 0.86, 0.94, 0.88, 0.85, 0.97, 0.91, 0.84, 0.84, 0.87, 0.84, 0.91, 0.9, 0.84, 0.81, 0.85, 0.83], "4": [0.29, 0.31, 0.52, 0.5, 0.43, 0.43, 0.64, 0.67, 0.66, 0.69, 0.7, 0.65, 0.73, 0.73, 0.71, 0.69, 0.67, 0.77, 0.7, 0.76, 0.68, 0.79, 0.74, 0.76, 0.72, 0.72, 0.75, 0.88, 0.78, 0.75, 0.75, 0.79, 0.88, 0.84, 0.88, 0.75, 0.78, 0.78, 0.8, 0.8, 0.77, 0.77, 0.8, 0.88, 0.86, 0.79, 0.81, 0.89, 0.92, 0.42, 0.51, 0.83, 0.9, 0.93, 0.92, 1.0], "5": [0.46, 0.71, 0.57, 0.7, 0.66, 0.91, 0.99, 0.85, 0.97, 0.91, 0.95, 0.9, 0.85, 0.86, 0.85, 0.85, 0.91, 0.79, 0.86, 0.85, 0.91, 0.81, 0.84, 0.87, 0.83, 0.75, 0.48, 0.89, 0.84, 0.86, 0.85, 0.94, 0.89, 0.88, 0.86, 0.85, 0.95, 0.89, 0.86, 0.9, 0.86, 0.86, 0.86, 0.56, 0.87, 0.87, 0.95, 0.92, 0.89, 0.91, 0.94, 1.0, 0.98, 0.84, 0.68, 0.37], "6": [0.45, 0.47, 0.5, 0.6, 0.76, 0.77, 0.79, 0.79, 0.78, 0.79, 0.75, 0.78, 0.78, 0.83, 0.76, 0.76, 0.74, 0.86, 0.83, 0.77, 0.78, 0.75, 0.76, 0.76, 0.87, 0.84, 0.79, 0.76, 0.82, 0.6, 0.89, 0.91, 0.99, 0.89, 0.79, 0.8, 0.37, 0.82, 0.76, 0.83, 0.83, 0.86, 0.83, 0.57, 0.86, 0.87, 1.0, 0.88, 0.95, 0.68, 0.67, 0.69, 0.66, 0.43, 0.49, 0.4]};
+const SAMPLES=[
+  {f:"s1.mp3",t:"Thoorathu Kaadhal",d:"Wife to husband · Long-distance love",pkg:"Package 1 · Acoustic",len:"2:17"},
+  {f:"s2.mp3",t:"Magalukku Oru Paattu",d:"Mother to daughter · Tribute",pkg:"Package 2 · Rhythmic",len:"2:31"},
+  {f:"s3.mp3",t:"Pirandhanaal Paattu",d:"Birthday · For husband",pkg:"Package 3 · Saranam",len:"3:42"},
+  {f:"s4.mp3",t:"Kaadhal Payanam",d:"Wedding anniversary · Love story",pkg:"Package 4 · Fusion",len:"4:58"},
+  {f:"s5.mp3",t:"Uyir Thozhan",d:"Birthday · Friends to forever",pkg:"Package 5 · Grand",len:"5:06"},
+  {f:"s6.mp3",t:"Movie Tune Love Story",d:"Film song, lyrics rewritten for the couple",pkg:"Movie Song",len:"3:27"},
+];
+const ICON_PLAY='<svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg>';
+const ICON_PAUSE='<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg>';
+const fmt=t=>isFinite(t)?Math.floor(t/60)+":"+String(Math.floor(t%60)).padStart(2,"0"):"0:00";
+const sampEl=document.getElementById("samp");
+sampEl.innerHTML=SAMPLES.map((x,i)=>`<div class="samp" data-i="${i}">
+  <div class="top"><button class="play" type="button" aria-label="Play ${x.t}">${ICON_PLAY}</button>
+  <div class="meta"><b>${x.t}</b><span>${x.d}</span></div></div>
+  <div class="wave" role="slider" tabindex="0" aria-label="Seek ${x.t}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">${PEAKS[i+1].map(p=>`<i style="height:${Math.max(8,p*46)}px"></i>`).join("")}</div>
+  <div class="foot"><span class="chip">${x.pkg}</span><span><span class="cur">0:00</span> / ${x.len}</span></div>
+</div>`).join("")+`<div class="vid-sample">
+  <video id="vid1" controls playsinline preload="none" poster="v1.jpg"><source src="v1.mp4" type="video/mp4"></video>
+  <div class="meta"><div class="eyebrow">Aesthetic Lyric Video</div><b style="color:#fff;font-size:1.3rem">Amma Paasam</b><span style="color:var(--mute)">Son to mother tribute · Beat-sync typography, soft transitions · 1:15</span><a class="btn btn-gold btn-sm" href="#order" style="width:max-content" onclick="pick('v60')">Itha maadhiri video venum</a></div>
+</div>`;
+let current=null;
+document.querySelectorAll(".samp").forEach(card=>{
+  const i=+card.dataset.i, btn=card.querySelector(".play"), bars=[...card.querySelectorAll(".wave i")], wave=card.querySelector(".wave"), cur=card.querySelector(".cur");
+  let au=null;
+  const get=()=>{ if(!au){ au=new Audio(SAMPLES[i].f); au.preload="metadata";
+      au.addEventListener("timeupdate",()=>{ const r=au.duration?au.currentTime/au.duration:0; const n=Math.round(r*bars.length); bars.forEach((b,k)=>b.classList.toggle("done",k<n)); cur.textContent=fmt(au.currentTime); wave.setAttribute("aria-valuenow",Math.round(r*100)); });
+      au.addEventListener("ended",()=>stop());
+      au.addEventListener("pause",()=>{btn.innerHTML=ICON_PLAY;card.classList.remove("playing")});
+      au.addEventListener("play",()=>{btn.innerHTML=ICON_PAUSE;card.classList.add("playing")}); }
+    return au; };
+  const stop=()=>{ if(au){au.pause();} };
+  btn.onclick=()=>{ const a=get(); if(a.paused){ if(current&&current!==a) current.pause(); document.getElementById("vid1").pause(); if(window.heroPause&&HERO.playing) heroPause(); current=a; a.play().catch(()=>{}); } else a.pause(); };
+  const seek=r=>{ const a=get(); const go=()=>{a.currentTime=r*a.duration; if(a.paused) btn.click();}; a.duration?go():a.addEventListener("loadedmetadata",go,{once:true}); if(!a.duration) a.load(); };
+  wave.addEventListener("click",e=>{ const b=wave.getBoundingClientRect(); seek((e.clientX-b.left)/b.width); });
+  wave.addEventListener("keydown",e=>{ const a=get(); if(!a.duration) return; if(e.key==="ArrowRight"){a.currentTime=Math.min(a.duration,a.currentTime+5);e.preventDefault();} if(e.key==="ArrowLeft"){a.currentTime=Math.max(0,a.currentTime-5);e.preventDefault();} });
+});
+document.getElementById("vid1").addEventListener("play",()=>{ if(current) current.pause(); if(HERO.playing) heroPause(); });
+
+/* ---------- reviews ---------- */
+const REELS=[
+  {n:10,cap:"<b>Surprise moment</b> · Song play aana bothu",capEn:"<b>Surprise moment</b> · When the song played",big:true},
+  {n:3,cap:"<b>“Goosebumps”</b> · Love song"},{n:1,cap:"<b>Emotional</b> · Gift song"},{n:2,cap:"<b>Feedback</b> · Birthday"},
+  {n:4,cap:"<b>Feedback</b> · Anniversary"},{n:5,cap:"<b>Feedback</b> · Family"},{n:6,cap:"<b>Feedback</b> · Wedding"},
+  {n:7,cap:"<b>Feedback</b> · Love"},{n:8,cap:"<b>Feedback</b> · Surprise"},{n:9,cap:"<b>Feedback</b> · Tribute"},
+];
+const reelsEl=document.getElementById("reels");
+reelsEl.innerHTML=REELS.map((r,k)=>`<figure class="reel ${r.big?"big":""}" style="margin:0">
+  <div class="frame"><video playsinline preload="none" poster="r${r.n}.jpg" src="r${r.n}.mp4"></video>
+  <button class="tap" type="button" aria-label="Play customer review ${k+1}"><span><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg></span></button></div>
+  <small data-k="${k}">${r.cap}</small></figure>`).join("");
+reelsEl.querySelectorAll(".reel").forEach(f=>{
+  const v=f.querySelector("video");
+  f.querySelector(".tap").onclick=()=>{ document.querySelectorAll("video").forEach(o=>{if(o!==v)o.pause()}); if(current) current.pause(); if(typeof HERO!=="undefined"&&HERO.playing) heroPause(); v.controls=true; f.classList.add("on"); v.play().catch(()=>{}); };
+  v.addEventListener("play",()=>{ document.querySelectorAll("video").forEach(o=>{if(o!==v)o.pause()}); if(current) current.pause(); if(typeof HERO!=="undefined"&&HERO.playing) heroPause(); });
+});
+reRenders.push(()=>reelsEl.querySelectorAll("small[data-k]").forEach(el=>{const r=REELS[+el.dataset.k]; el.innerHTML=T(r.cap,r.capEn||r.cap);}));
+document.getElementById("rPrev").onclick=()=>reelsEl.scrollBy({left:-260,behavior:"smooth"});
+document.getElementById("rNext").onclick=()=>reelsEl.scrollBy({left:260,behavior:"smooth"});
+
+/* ---------- order desk ---------- */
+const fPkg=document.getElementById("fPkg");
+fPkg.innerHTML = `
+  <optgroup label="Audio packages">${PKGS.map((p,i)=>`<option value="${p.id}">${i+1}. ${p.name} · ${inr(p.price)}</option>`).join("")}</optgroup>
+  <optgroup label="Combos (song + 30s video)">${COMBOS.map(c=>`<option value="${c.id}">${c.tier} · ${inr(c.price)}</option>`).join("")}</optgroup>
+  <optgroup label="Video only">${VIDS.map(v=>`<option value="${v.id}">${v.name} · ${inr(v.price)}</option>`).join("")}</optgroup>
+  <optgroup label="Movie songs">${MOVIES.map(m=>`<option value="${m.id}">${m.name} · ${inr(m.price)}+</option>`).join("")}</optgroup>`;
+fPkg.value="c3";
+let extra=0;
+const all=[...PKGS,...COMBOS.map(c=>({...c,name:c.tier})),...VIDS,...MOVIES];
+const isMovie=p=>p.id.startsWith("movie");
+function pick(id){ fPkg.value=id; update(); }
+function pickAndScroll(id){ pick(id); document.getElementById("order").scrollIntoView({behavior:reduce?"auto":"smooth"}); }
+const $=id=>document.getElementById(id);
+$("plus").onclick=()=>{extra=Math.min(extra+1,10);update()};
+$("minus").onclick=()=>{extra=Math.max(extra-1,0);update()};
+["fName","fOcc","fPkg","fLang","fLangOther","fFor","fDate","fNote"].forEach(id=>$(id).addEventListener("input",update));
+function msgText(){
+  const p=all.find(x=>x.id===fPkg.value), total=p.price+extra*899;
+  const d=$("fDate").value?new Date($("fDate").value+"T00:00").toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"}):"";
+  let m=`${T("Vanakkam","Hello")} Digital Isai! 🎶\n\nName: ${$("fName").value.trim()||"-"}\nOccasion: ${$("fOcc").value}\nLanguage: ${langVal()}\nPackage: ${p.name} (${inr(p.price)}${isMovie(p)?" + extras":""})`;
+  if(extra) m+=`\nExtra video: +${extra*30} sec (${inr(extra*899)})`;
+  if($("fFor").value.trim()) m+=`\nNames in song: ${$("fFor").value.trim()}`;
+  if(d) m+=`\nNeeded by: ${d}`;
+  if($("fNote").value.trim()) m+=`\nStory / mood: ${$("fNote").value.trim()}`;
+  m+=`\n\nTotal: ${inr(total)}${isMovie(p)?"+":""} ${T("(preview kettutu pay panren)","(will pay after the preview)")}`;
+  return {m,p,total};
+}
+function update(){
+  const {m,p,total}=msgText();
+  $("xv").textContent=extra;
+  $("lines").innerHTML=`<div><span>${p.name}</span><span>${inr(p.price)}</span></div>`+(extra?`<div><span>Extra video +${extra*30}s</span><span>${inr(extra*899)}</span></div>`:"")+(isMovie(p)?`<div><span style="color:var(--mute)">Arrangement extra</span><span>quote</span></div>`:"");
+  $("total").textContent=inr(total)+(isMovie(p)?"+":"");
+  $("msg").textContent=m;
+  $("waBtn").href=`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+}
+$("waBtn").addEventListener("click",e=>{ if(!$("fName").value.trim()){ e.preventDefault(); $("eName").textContent=T("Ungal peyar type pannunga, appuram anuppalam.","Please type your name first."); $("fName").focus(); } else $("eName").textContent=""; });
+$("copyBtn").onclick=()=>{
+  const t=$("msg").textContent;
+  const ok=()=>$("toast").textContent=T("Copied. WhatsApp-la +91 93612 09126-ku paste pannunga.","Copied. Paste it in WhatsApp to +91 93612 09126.");
+  try{ navigator.clipboard.writeText(t).then(ok,()=>sel()); }catch(e){ sel(); }
+  function sel(){ const r=document.createRange(); r.selectNodeContents($("msg")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); $("toast").textContent=T("Message select aagiduchu, copy pannunga.","Message selected. Copy it now."); }
+};
+update();
+reRenders.push(renderDetail, update);
+applyLang();
+
+/* ---------- hero song: starts on the visitor's first tap (browsers block sound before that) ---------- */
+const HERO={audio:new Audio("hero.mp3"),analyser:null,data:null,playing:false,muted:false};
+HERO.audio.loop=true; HERO.audio.preload="auto"; HERO.audio.volume=.75;
+try{ HERO.muted=localStorage.getItem("di-hero-muted")==="1"; }catch(e){}
+const sndBtn=document.getElementById("snd"), sndTxt=document.getElementById("sndTxt");
+function setSnd(){ sndBtn.classList.toggle("on",HERO.playing); sndBtn.setAttribute("aria-pressed",HERO.playing); sndTxt.textContent=HERO.playing?"Now playing · tap to stop":"Tap to play our song"; }
+function heroAnalyser(){ if(HERO.analyser) return; try{ const C=window.AudioContext||window.webkitAudioContext; const ctx=new C(); const src=ctx.createMediaElementSource(HERO.audio); const an=ctx.createAnalyser(); an.fftSize=256; an.smoothingTimeConstant=.8; src.connect(an); an.connect(ctx.destination); HERO.analyser=an; HERO.ctx=ctx; HERO.data=new Uint8Array(an.frequencyBinCount);}catch(e){} }
+function heroPlay(){ heroAnalyser(); if(HERO.ctx&&HERO.ctx.state==="suspended") HERO.ctx.resume(); if(current) current.pause(); const v=document.getElementById("vid1"); if(v) v.pause(); HERO.audio.play().then(()=>{HERO.playing=true;setSnd();}).catch(()=>{}); }
+function heroPause(){ HERO.audio.pause(); HERO.playing=false; setSnd(); }
+window.heroPause=heroPause;
+sndBtn.addEventListener("pointerdown",e=>e.stopPropagation());
+sndBtn.addEventListener("click",e=>{ e.stopPropagation(); if(HERO.playing){ heroPause(); HERO.muted=true; try{localStorage.setItem("di-hero-muted","1")}catch(_){} } else { HERO.muted=false; try{localStorage.setItem("di-hero-muted","0")}catch(_){} heroPlay(); } });
+// try right away (works only where the browser allows), else start on the first tap / key anywhere
+HERO.audio.play().then(()=>{HERO.playing=true;setSnd();}).catch(()=>{ HERO.audio.pause(); });
+function firstTouch(e){ removeEventListener("pointerdown",firstTouch,true); removeEventListener("keydown",firstTouch,true);
+  if(HERO.muted||HERO.playing) return; if(e.target.closest&&e.target.closest(".samp,.vid-sample,#snd,.fab,a[target],.pkg,#hearIt,.reel")) return; heroPlay(); }
+addEventListener("pointerdown",firstTouch,true); addEventListener("keydown",firstTouch,true);
+document.addEventListener("visibilitychange",()=>{ if(document.hidden&&HERO.playing){ HERO.audio.pause(); HERO.resume=true; } else if(!document.hidden&&HERO.resume){ HERO.resume=false; HERO.audio.play().catch(()=>{}); } });
+setSnd();
+
+/* ---------- 3D hero: vinyl + orbiting pixels + sound ring ---------- */
+(function(){
+  const stage=document.getElementById("stage");
+  if(!window.THREE) return;
+  let renderer;
+  try{ renderer=new THREE.WebGLRenderer({antialias:true,alpha:true}); }catch(e){ return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  stage.prepend(renderer.domElement); stage.classList.add("ready");
+  const scene=new THREE.Scene();
+  const cam=new THREE.PerspectiveCamera(36,1,.1,100); cam.position.set(0,1.4,8.2); cam.lookAt(0,0,0);
+
+  scene.add(new THREE.AmbientLight(0x404452,1.1));
+  const key=new THREE.PointLight(0xffc766,2.2,30); key.position.set(4,5,5); scene.add(key);
+  const rim=new THREE.PointLight(0x9fb2d6,1.2,30); rim.position.set(-5,-2,3); scene.add(rim);
+
+  const world=new THREE.Group(); scene.add(world);
+  world.rotation.x=0.42;
+
+  // groove texture
+  const c=document.createElement("canvas"); c.width=c.height=1024; const g=c.getContext("2d");
+  g.fillStyle="#08080a"; g.fillRect(0,0,1024,1024);
+  for(let r=500;r>200;r-=3){ g.beginPath(); g.arc(512,512,r,0,Math.PI*2); g.strokeStyle=`rgba(${r%9?30:60},${r%9?30:58},${r%9?36:66},1)`; g.lineWidth=1.4; g.stroke(); }
+  const sheen=g.createLinearGradient(0,0,1024,1024); sheen.addColorStop(.35,"rgba(255,255,255,0)"); sheen.addColorStop(.5,"rgba(255,220,150,.13)"); sheen.addColorStop(.65,"rgba(255,255,255,0)");
+  g.fillStyle=sheen; g.beginPath(); g.arc(512,512,505,0,Math.PI*2); g.fill();
+  // gold label
+  const lg=g.createRadialGradient(470,470,20,512,512,200); lg.addColorStop(0,"#ffe09a"); lg.addColorStop(.6,"#e9ad3f"); lg.addColorStop(1,"#8d5f17");
+  g.fillStyle=lg; g.beginPath(); g.arc(512,512,190,0,Math.PI*2); g.fill();
+  g.fillStyle="#1a1206"; g.textAlign="center"; g.font="600 40px Michroma, sans-serif"; g.fillText("DIGITAL",512,470);
+  g.font="700 62px 'Noto Serif Tamil', serif"; g.fillText("இசை",512,575);
+  g.beginPath(); g.arc(512,512,14,0,Math.PI*2); g.fillStyle="#07080b"; g.fill();
+  const tex=new THREE.CanvasTexture(c); tex.anisotropy=8;
+  document.fonts && document.fonts.ready.then(()=>{ g.fillStyle=lg; g.beginPath(); g.arc(512,512,190,0,Math.PI*2); g.fill(); g.fillStyle="#1a1206"; g.font="600 40px Michroma, sans-serif"; g.fillText("DIGITAL",512,470); g.font="700 62px 'Noto Serif Tamil', serif"; g.fillText("இசை",512,575); g.beginPath(); g.arc(512,512,14,0,Math.PI*2); g.fillStyle="#07080b"; g.fill(); tex.needsUpdate=true; });
+
+  const discG=new THREE.CylinderGeometry(2.2,2.2,.07,128,1);
+  const edge=new THREE.MeshStandardMaterial({color:0x1a1a1f,metalness:.6,roughness:.35});
+  const face=new THREE.MeshStandardMaterial({map:tex,metalness:.35,roughness:.42});
+  const disc=new THREE.Mesh(discG,[edge,face,face]);
+  world.add(disc);
+
+  // gold rim
+  const rimRing=new THREE.Mesh(new THREE.TorusGeometry(2.27,.035,16,180),new THREE.MeshStandardMaterial({color:0xe9ad3f,metalness:1,roughness:.25,emissive:0x3a2405}));
+  rimRing.rotation.x=Math.PI/2; world.add(rimRing);
+
+  // sound-wave bars ring
+  const bars=new THREE.Group(); const N=72; const barMat=new THREE.MeshStandardMaterial({color:0xe9ad3f,metalness:.9,roughness:.3,emissive:0x2a1a04});
+  const barList=[];
+  for(let i=0;i<N;i++){ const b=new THREE.Mesh(new THREE.BoxGeometry(.05,1,.05),barMat); const a=i/N*Math.PI*2; b.position.set(Math.cos(a)*2.75,0,Math.sin(a)*2.75); bars.add(b); barList.push(b); }
+  world.add(bars);
+
+  // orbiting pixel cubes (logo motif)
+  const cubes=new THREE.Group();
+  const gold=new THREE.MeshStandardMaterial({color:0xe9ad3f,metalness:.85,roughness:.3});
+  const silver=new THREE.MeshStandardMaterial({color:0x9aa3b5,metalness:.9,roughness:.35});
+  const cubeList=[];
+  for(let i=0;i<46;i++){ const s=.08+Math.random()*.12; const m=new THREE.Mesh(new THREE.BoxGeometry(s,s,s),i%3?gold:silver);
+    const r=3.1+Math.random()*1.1, a=Math.random()*Math.PI*2, y=(Math.random()-.5)*1.6;
+    m.userData={r,a,y,sp:.15+Math.random()*.25,spin:Math.random()*2}; cubes.add(m); cubeList.push(m); }
+  scene.add(cubes); cubes.rotation.x=.42;
+
+  // floating note glyph sprite
+  function noteSprite(){ const k=document.createElement("canvas"); k.width=k.height=128; const x=k.getContext("2d"); x.fillStyle="#ffd27a"; x.font="96px serif"; x.textAlign="center"; x.textBaseline="middle"; x.fillText("♪",64,70); const s=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(k),transparent:true,depthWrite:false})); s.scale.set(.5,.5,.5); return s; }
+  const notes=[]; for(let i=0;i<6;i++){ const s=noteSprite(); s.userData={t:Math.random()*6,a:Math.random()*Math.PI*2}; scene.add(s); notes.push(s); }
+
+  // interaction: drag = full 360
+  let rotY=0, velY=reduce?0:.006, dragging=false, lastX=0, tiltX=.42, targetTilt=.42;
+  stage.addEventListener("pointerdown",e=>{dragging=true;lastX=e.clientX;stage.setPointerCapture(e.pointerId)});
+  stage.addEventListener("pointermove",e=>{ if(dragging){ const dx=e.clientX-lastX; lastX=e.clientX; rotY+=dx*.012; velY=dx*.0012; } const r=stage.getBoundingClientRect(); targetTilt=.42+((e.clientY-r.top)/r.height-.5)*.5; });
+  addEventListener("pointerup",()=>{dragging=false});
+
+  function size(){ const w=stage.clientWidth,h=stage.clientHeight; renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix(); }
+  size(); new ResizeObserver(size).observe(stage);
+
+  let t=0, visible=true;
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting}).observe(stage);
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    t+=.016;
+    if(!dragging){ rotY+=velY; velY+= ((reduce?0:.006)-velY)*.02; }
+    if(HERO.playing&&!dragging) rotY+=.028;   // spins like a real record while the song plays
+    disc.rotation.y=rotY*2.2;      // record spins faster
+    world.rotation.y=rotY*.35;
+    tiltX+=(targetTilt-tiltX)*.05; world.rotation.x=tiltX; cubes.rotation.x=tiltX;
+    let live=null; if(HERO.playing&&HERO.analyser){ HERO.analyser.getByteFrequencyData(HERO.data); live=HERO.data; }
+    barList.forEach((b,i)=>{ let h; if(live){ const k=i<N/2?i:N-1-i; h=.18+(live[2+Math.floor(k*1.4)]/255)*1.9; } else h=.25+Math.abs(Math.sin(t*3+i*.45)*Math.cos(t*1.3+i*.17))*1.1; b.scale.y=reduce&&!live?.5:h; });
+    bars.rotation.y=-rotY*.6;
+    cubeList.forEach(m=>{ const u=m.userData; const a=u.a+t*u.sp+rotY*.5; m.position.set(Math.cos(a)*u.r,u.y+Math.sin(t+u.a)*.15,Math.sin(a)*u.r); m.rotation.x=m.rotation.y=t*u.spin; });
+    notes.forEach(s=>{ const u=s.userData; u.t+=.012; if(u.t>6){u.t=0;u.a=Math.random()*Math.PI*2;} s.position.set(Math.cos(u.a)*1.6,u.t*.55-.4,Math.sin(u.a)*1.6); s.material.opacity=Math.sin(u.t/6*Math.PI); });
+    key.position.x=Math.cos(t*.4)*5;
+    renderer.render(scene,cam);
+  }
+  frame();
+})();
+</script>
+
+</body>
+</html>
